@@ -1,0 +1,5 @@
+来源仓库：https://github.com/unionai-oss/pandera
+冻结 commit：140fea857945fde0ddc1a1352b5f88d148b9fa51
+许可证：MIT
+导入日期：2026-11-15
+说明：本目录为评测底座，已剥离上游 git 历史，仅保留代码快照。
