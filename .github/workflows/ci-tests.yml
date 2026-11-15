@@ -244,7 +244,7 @@ jobs:
         run: |
           nox -v -db uv --non-interactive --session 'tests-${{ matrix.python-version }}(extra=None, pandas=None, pydantic=None, polars=None)'
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-base-${{ runner.os }}-py${{ matrix.python-version }}
@@ -306,7 +306,7 @@ jobs:
       - name: Unit Tests - pandas
         run: nox -v -db uv --non-interactive --session "tests-${{ matrix.python-version }}(extra='pandas', pandas='${{ matrix.pandas-version }}', pydantic='${{ matrix.pydantic-version }}', polars=None)"
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-pandas-${{ runner.os }}-py${{ matrix.python-version }}-pandas${{ matrix.pandas-version }}-pydantic${{ matrix.pydantic-version }}
@@ -375,7 +375,7 @@ jobs:
       - name: Unit Tests - ${{ matrix.extra }}
         run: nox -v -db uv --non-interactive --session "tests-${{ matrix.python-version }}(extra='${{ matrix.extra }}', pandas='${{ matrix.pandas-version }}', pydantic='${{ matrix.pydantic-version }}', polars=None)"
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-${{ matrix.extra }}-${{ runner.os }}-py${{ matrix.python-version }}-pandas${{ matrix.pandas-version }}-pydantic${{ matrix.pydantic-version }}
@@ -492,7 +492,7 @@ jobs:
         run: nox -v -db uv --non-interactive --session "tests-${{ matrix.python-version }}(extra='${{ matrix.extra }}', pandas='${{ matrix.pandas-version }}', pydantic=None, polars=None)"
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-${{ matrix.extra }}-${{ runner.os }}-py${{ matrix.python-version }}-pandas${{ matrix.pandas-version }}-polars${{ matrix.polars-version }}
@@ -563,7 +563,7 @@ jobs:
       - name: Unit Tests - narwhals backend (${{ matrix.extra }})
         run: nox -v -db uv --non-interactive --session "tests_narwhals_backend-${{ matrix.python-version }}(extra='${{ matrix.extra }}')"
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-narwhals-backend-${{ matrix.extra }}-py${{ matrix.python-version }}
@@ -620,7 +620,7 @@ jobs:
       - name: Unit Tests - narwhals
         run: nox -v -db uv --non-interactive --session "tests-${{ matrix.python-version }}(extra='narwhals', pandas=None, pydantic=None, polars=None)"
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
           flags: unit-tests-narwhals-${{ runner.os }}-py${{ matrix.python-version }}
