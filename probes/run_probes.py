@@ -92,7 +92,7 @@ def main():
         assert r.ok is True
 
     def p6():
-        dup_parent = pd.DataFrame({"id": [1, 1, 2], "name": ["a", "a2", "b"]})
+        dup_parent = pd.DataFrame({"id": [1, 1, 2, 3], "name": ["a", "a2", "b", "c"]})
         r = check_referential_integrity(
             {"orders": orders_ok, "customers": dup_parent},
             [ForeignKey("orders", "customers", "customer_id", "id")])
